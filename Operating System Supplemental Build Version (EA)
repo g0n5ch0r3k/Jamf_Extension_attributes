@@ -1,0 +1,4 @@
+# Provides the supplemental Build to Jamf Pro without the need of Updating Jamf Pro to 10.46+
+
+supplementalBuild=$(system_profiler SPSoftwareDataType | grep "System Version" | awk '{print $6}' | sed 's/^(\(.*\))$/\1/')
+echo "<result>$supplementalBuild</result>"
